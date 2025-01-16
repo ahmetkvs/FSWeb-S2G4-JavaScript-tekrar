@@ -131,9 +131,15 @@ besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a - b);
 
 // 3f çözümü
+const counter = {};
 
+sayilar.forEach((sayi) => {
+  counter[sayi] = (counter[sayi] || 0) + 1;
+});
 
+tekraredensayilar = Object.entries(counter).filter(([key, value])=> value > 1).map(([key, value])=> `${key} sayısı ${value} kere tekrar edilmiştir`);
 
+console.log(tekraredensayilar);
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
